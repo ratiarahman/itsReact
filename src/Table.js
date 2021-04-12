@@ -9,23 +9,23 @@ const TableHead = () => {
     );
 }
 
-const TableBody = (Lists) => {
-    Lists.map((item) => {
-        return(
-            <tbody>
+const TableBody = ({listOfEmployee}) => {
+    return listOfEmployee.map((item) => 
+        (
+            <tbody >
             <tr>
                 <td>{item.name}</td>
                 <td>{item.job}</td>
             </tr>
-            </tbody>
-        );
-    })
+            </tbody>)
+    
+    );
 }
-function Table(Lists){
+function Table({Lists}){
     return(
         <table>
             <TableHead />
-            <TableBody Lists={Lists}/>
+            <TableBody listOfEmployee={Lists}/>
         </table>
     );
 }
